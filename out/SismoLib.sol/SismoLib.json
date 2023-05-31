@@ -1,0 +1,114 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "lib/sismo-connect-packages/packages/sismo-connect-solidity/src/SismoLib.sol",
+    "id": 34905,
+    "exportedSymbols": {
+      "Auth": [
+        34666
+      ],
+      "AuthRequest": [
+        34620
+      ],
+      "AuthRequestBuilder": [
+        32582
+      ],
+      "AuthType": [
+        34648
+      ],
+      "Claim": [
+        34680
+      ],
+      "ClaimRequest": [
+        34636
+      ],
+      "ClaimRequestBuilder": [
+        33229
+      ],
+      "ClaimType": [
+        34654
+      ],
+      "IAddressesProvider": [
+        34828
+      ],
+      "IHydraS2Verifier": [
+        34901
+      ],
+      "ISismoConnectVerifier": [
+        29817
+      ],
+      "RequestBuilder": [
+        34335
+      ],
+      "Signature": [
+        34685
+      ],
+      "SignatureBuilder": [
+        34461
+      ],
+      "SignatureRequest": [
+        34643
+      ],
+      "SismoConnect": [
+        32124
+      ],
+      "SismoConnectHelper": [
+        34588
+      ],
+      "SismoConnectRequest": [
+        34606
+      ],
+      "SismoConnectResponse": [
+        34698
+      ],
+      "SismoConnectVerifiedResult": [
+        34730
+      ],
+      "VerifiedAuth": [
+        34742
+      ],
+      "VerifiedClaim": [
+        34758
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:440:29",
+    "nodes": [
+      {
+        "id": 34903,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:29",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 34904,
+        "nodeType": "ImportDirective",
+        "src": "388:83:29",
+        "nodes": [],
+        "absolutePath": "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/sismo-connect/SismoConnectLib.sol",
+        "file": "sismo-connect-onchain-verifier/src/libs/sismo-connect/SismoConnectLib.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 34905,
+        "sourceUnit": 32125,
+        "symbolAliases": [],
+        "unitAlias": ""
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 29
+}

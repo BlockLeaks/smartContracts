@@ -1,0 +1,1625 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes16",
+          "name": "receivedAppId",
+          "type": "bytes16"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "expectedAppId",
+          "type": "bytes16"
+        }
+      ],
+      "name": "AppIdMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes16",
+          "name": "receivedNamespace",
+          "type": "bytes16"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "expectedNamespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "NamespaceMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "requestMessageSignature",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "responseMessageSignature",
+          "type": "bytes"
+        }
+      ],
+      "name": "SignatureMessageMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "requestVersion",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "responseVersion",
+          "type": "bytes32"
+        }
+      ],
+      "name": "VersionMismatch",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "VerifierSet",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "SISMO_CONNECT_VERSION",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "appId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "version",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "signedMessage",
+              "type": "bytes"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "enum AuthType",
+                      "name": "authType",
+                      "type": "uint8"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isAnon",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isSelectableByUser",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "userId",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "extraData",
+                      "type": "bytes"
+                    }
+                  ],
+                  "internalType": "struct Auth[]",
+                  "name": "auths",
+                  "type": "tuple[]"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "enum ClaimType",
+                      "name": "claimType",
+                      "type": "uint8"
+                    },
+                    {
+                      "internalType": "bytes16",
+                      "name": "groupId",
+                      "type": "bytes16"
+                    },
+                    {
+                      "internalType": "bytes16",
+                      "name": "groupTimestamp",
+                      "type": "bytes16"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isSelectableByUser",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "value",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "extraData",
+                      "type": "bytes"
+                    }
+                  ],
+                  "internalType": "struct Claim[]",
+                  "name": "claims",
+                  "type": "tuple[]"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "provingScheme",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "proofData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SismoConnectProof[]",
+              "name": "proofs",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct SismoConnectResponse",
+          "name": "response",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "appId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "request",
+          "type": "tuple"
+        }
+      ],
+      "name": "verify",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "appId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "version",
+              "type": "bytes32"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "proofData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct VerifiedAuth[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "proofId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "proofData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct VerifiedClaim[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "bytes",
+              "name": "signedMessage",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SismoConnectVerifiedResult",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "SISMO_CONNECT_VERSION()": "20d5eeb8",
+    "verify((bytes16,bytes16,bytes32,bytes,((uint8,bool,bool,uint256,bytes)[],(uint8,bytes16,bytes16,bool,uint256,bytes)[],bytes32,bytes,bytes)[]),(bytes16,bytes16,(uint8,uint256,bool,bool,bool,bytes)[],(uint8,bytes16,bytes16,uint256,bool,bool,bytes)[],(bytes,bool,bytes)))": "2a7f5d64"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes16\",\"name\":\"receivedAppId\",\"type\":\"bytes16\"},{\"internalType\":\"bytes16\",\"name\":\"expectedAppId\",\"type\":\"bytes16\"}],\"name\":\"AppIdMismatch\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes16\",\"name\":\"receivedNamespace\",\"type\":\"bytes16\"},{\"internalType\":\"bytes16\",\"name\":\"expectedNamespace\",\"type\":\"bytes16\"}],\"name\":\"NamespaceMismatch\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"requestMessageSignature\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"responseMessageSignature\",\"type\":\"bytes\"}],\"name\":\"SignatureMessageMismatch\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"requestVersion\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"responseVersion\",\"type\":\"bytes32\"}],\"name\":\"VersionMismatch\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"VerifierSet\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"SISMO_CONNECT_VERSION\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bytes16\",\"name\":\"appId\",\"type\":\"bytes16\"},{\"internalType\":\"bytes16\",\"name\":\"namespace\",\"type\":\"bytes16\"},{\"internalType\":\"bytes32\",\"name\":\"version\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"signedMessage\",\"type\":\"bytes\"},{\"components\":[{\"components\":[{\"internalType\":\"enum AuthType\",\"name\":\"authType\",\"type\":\"uint8\"},{\"internalType\":\"bool\",\"name\":\"isAnon\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isSelectableByUser\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"userId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct Auth[]\",\"name\":\"auths\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"enum ClaimType\",\"name\":\"claimType\",\"type\":\"uint8\"},{\"internalType\":\"bytes16\",\"name\":\"groupId\",\"type\":\"bytes16\"},{\"internalType\":\"bytes16\",\"name\":\"groupTimestamp\",\"type\":\"bytes16\"},{\"internalType\":\"bool\",\"name\":\"isSelectableByUser\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct Claim[]\",\"name\":\"claims\",\"type\":\"tuple[]\"},{\"internalType\":\"bytes32\",\"name\":\"provingScheme\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"proofData\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct SismoConnectProof[]\",\"name\":\"proofs\",\"type\":\"tuple[]\"}],\"internalType\":\"struct SismoConnectResponse\",\"name\":\"response\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"bytes16\",\"name\":\"appId\",\"type\":\"bytes16\"},{\"internalType\":\"bytes16\",\"name\":\"namespace\",\"type\":\"bytes16\"},{\"components\":[{\"internalType\":\"enum AuthType\",\"name\":\"authType\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"userId\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isAnon\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isOptional\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isSelectableByUser\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct AuthRequest[]\",\"name\":\"auths\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"enum ClaimType\",\"name\":\"claimType\",\"type\":\"uint8\"},{\"internalType\":\"bytes16\",\"name\":\"groupId\",\"type\":\"bytes16\"},{\"internalType\":\"bytes16\",\"name\":\"groupTimestamp\",\"type\":\"bytes16\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isOptional\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isSelectableByUser\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct ClaimRequest[]\",\"name\":\"claims\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"bytes\",\"name\":\"message\",\"type\":\"bytes\"},{\"internalType\":\"bool\",\"name\":\"isSelectableByUser\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct SignatureRequest\",\"name\":\"signature\",\"type\":\"tuple\"}],\"internalType\":\"struct SismoConnectRequest\",\"name\":\"request\",\"type\":\"tuple\"}],\"name\":\"verify\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes16\",\"name\":\"appId\",\"type\":\"bytes16\"},{\"internalType\":\"bytes16\",\"name\":\"namespace\",\"type\":\"bytes16\"},{\"internalType\":\"bytes32\",\"name\":\"version\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"enum AuthType\",\"name\":\"authType\",\"type\":\"uint8\"},{\"internalType\":\"bool\",\"name\":\"isAnon\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"userId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"proofData\",\"type\":\"bytes\"}],\"internalType\":\"struct VerifiedAuth[]\",\"name\":\"auths\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"enum ClaimType\",\"name\":\"claimType\",\"type\":\"uint8\"},{\"internalType\":\"bytes16\",\"name\":\"groupId\",\"type\":\"bytes16\"},{\"internalType\":\"bytes16\",\"name\":\"groupTimestamp\",\"type\":\"bytes16\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"proofId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"proofData\",\"type\":\"bytes\"}],\"internalType\":\"struct VerifiedClaim[]\",\"name\":\"claims\",\"type\":\"tuple[]\"},{\"internalType\":\"bytes\",\"name\":\"signedMessage\",\"type\":\"bytes\"}],\"internalType\":\"struct SismoConnectVerifiedResult\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/interfaces/ISismoConnectVerifier.sol\":\"ISismoConnectVerifier\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/openzeppelin-contracts/contracts/\",\":@sismo-core/hydra-s2/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/package/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":hydra-s2-zkps/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":sismo-connect-onchain-verifier/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/\",\":sismo-connect-packages/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/\",\":sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/\"]},\"sources\":{\"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/interfaces/ISismoConnectVerifier.sol\":{\"keccak256\":\"0xa76e685b90c0ec1748bfc7568f3234ed5f0e1f053501a47124956fee129bbc5d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://efed9af69af3422d916a8c95e9ed405992c3142a92e9a3cb4e607d333cc32d5a\",\"dweb:/ipfs/Qme7FfoLLNHWT5cL7iDXaEUFmnsXRMwRXjtoq4LF9hkNtZ\"]},\"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/Structs.sol\":{\"keccak256\":\"0x666f7e6c78eb9478790ff290780f11374db0333a9f88914592b25386e924cda3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9bb56d30e78ccb9d121a9f1023244ea2af0877fc9503a3b8db068a50730031fb\",\"dweb:/ipfs/QmdzfGvxMxf2CCTr5vqV1YP4VvchhczcT1VNeZzqQHKJTP\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.19+commit.7dd6d404"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "bytes16",
+              "name": "receivedAppId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "expectedAppId",
+              "type": "bytes16"
+            }
+          ],
+          "type": "error",
+          "name": "AppIdMismatch"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes16",
+              "name": "receivedNamespace",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "expectedNamespace",
+              "type": "bytes16"
+            }
+          ],
+          "type": "error",
+          "name": "NamespaceMismatch"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "requestMessageSignature",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "responseMessageSignature",
+              "type": "bytes"
+            }
+          ],
+          "type": "error",
+          "name": "SignatureMessageMismatch"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "requestVersion",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "responseVersion",
+              "type": "bytes32"
+            }
+          ],
+          "type": "error",
+          "name": "VersionMismatch"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32",
+              "indexed": false
+            },
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "VerifierSet",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "SISMO_CONNECT_VERSION",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct SismoConnectResponse",
+              "name": "response",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes16",
+                  "name": "appId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "namespace",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "version",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "signedMessage",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "struct SismoConnectProof[]",
+                  "name": "proofs",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "struct Auth[]",
+                      "name": "auths",
+                      "type": "tuple[]",
+                      "components": [
+                        {
+                          "internalType": "enum AuthType",
+                          "name": "authType",
+                          "type": "uint8"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "isAnon",
+                          "type": "bool"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "isSelectableByUser",
+                          "type": "bool"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "userId",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "bytes",
+                          "name": "extraData",
+                          "type": "bytes"
+                        }
+                      ]
+                    },
+                    {
+                      "internalType": "struct Claim[]",
+                      "name": "claims",
+                      "type": "tuple[]",
+                      "components": [
+                        {
+                          "internalType": "enum ClaimType",
+                          "name": "claimType",
+                          "type": "uint8"
+                        },
+                        {
+                          "internalType": "bytes16",
+                          "name": "groupId",
+                          "type": "bytes16"
+                        },
+                        {
+                          "internalType": "bytes16",
+                          "name": "groupTimestamp",
+                          "type": "bytes16"
+                        },
+                        {
+                          "internalType": "bool",
+                          "name": "isSelectableByUser",
+                          "type": "bool"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "value",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "bytes",
+                          "name": "extraData",
+                          "type": "bytes"
+                        }
+                      ]
+                    },
+                    {
+                      "internalType": "bytes32",
+                      "name": "provingScheme",
+                      "type": "bytes32"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "proofData",
+                      "type": "bytes"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "extraData",
+                      "type": "bytes"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "internalType": "struct SismoConnectRequest",
+              "name": "request",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes16",
+                  "name": "appId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "namespace",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "struct AuthRequest[]",
+                  "name": "auths",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "enum AuthType",
+                      "name": "authType",
+                      "type": "uint8"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "userId",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isAnon",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isOptional",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isSelectableByUser",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "extraData",
+                      "type": "bytes"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "struct ClaimRequest[]",
+                  "name": "claims",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "enum ClaimType",
+                      "name": "claimType",
+                      "type": "uint8"
+                    },
+                    {
+                      "internalType": "bytes16",
+                      "name": "groupId",
+                      "type": "bytes16"
+                    },
+                    {
+                      "internalType": "bytes16",
+                      "name": "groupTimestamp",
+                      "type": "bytes16"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "value",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isOptional",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isSelectableByUser",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "extraData",
+                      "type": "bytes"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "struct SignatureRequest",
+                  "name": "signature",
+                  "type": "tuple",
+                  "components": [
+                    {
+                      "internalType": "bytes",
+                      "name": "message",
+                      "type": "bytes"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isSelectableByUser",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "extraData",
+                      "type": "bytes"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "verify",
+          "outputs": [
+            {
+              "internalType": "struct SismoConnectVerifiedResult",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes16",
+                  "name": "appId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "namespace",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "version",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "struct VerifiedAuth[]",
+                  "name": "auths",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "enum AuthType",
+                      "name": "authType",
+                      "type": "uint8"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "isAnon",
+                      "type": "bool"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "userId",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "extraData",
+                      "type": "bytes"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "proofData",
+                      "type": "bytes"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "struct VerifiedClaim[]",
+                  "name": "claims",
+                  "type": "tuple[]",
+                  "components": [
+                    {
+                      "internalType": "enum ClaimType",
+                      "name": "claimType",
+                      "type": "uint8"
+                    },
+                    {
+                      "internalType": "bytes16",
+                      "name": "groupId",
+                      "type": "bytes16"
+                    },
+                    {
+                      "internalType": "bytes16",
+                      "name": "groupTimestamp",
+                      "type": "bytes16"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "value",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "extraData",
+                      "type": "bytes"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "proofId",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bytes",
+                      "name": "proofData",
+                      "type": "bytes"
+                    }
+                  ]
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "signedMessage",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@openzeppelin/contracts/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/openzeppelin-contracts/contracts/",
+        ":@sismo-core/hydra-s2/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/package/contracts/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        ":forge-std/=lib/forge-std/src/",
+        ":hydra-s2-zkps/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/",
+        ":openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        ":sismo-connect-onchain-verifier/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/",
+        ":sismo-connect-packages/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/",
+        ":sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/interfaces/ISismoConnectVerifier.sol": "ISismoConnectVerifier"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/interfaces/ISismoConnectVerifier.sol": {
+        "keccak256": "0xa76e685b90c0ec1748bfc7568f3234ed5f0e1f053501a47124956fee129bbc5d",
+        "urls": [
+          "bzz-raw://efed9af69af3422d916a8c95e9ed405992c3142a92e9a3cb4e607d333cc32d5a",
+          "dweb:/ipfs/Qme7FfoLLNHWT5cL7iDXaEUFmnsXRMwRXjtoq4LF9hkNtZ"
+        ],
+        "license": "MIT"
+      },
+      "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/Structs.sol": {
+        "keccak256": "0x666f7e6c78eb9478790ff290780f11374db0333a9f88914592b25386e924cda3",
+        "urls": [
+          "bzz-raw://9bb56d30e78ccb9d121a9f1023244ea2af0877fc9503a3b8db068a50730031fb",
+          "dweb:/ipfs/QmdzfGvxMxf2CCTr5vqV1YP4VvchhczcT1VNeZzqQHKJTP"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/interfaces/ISismoConnectVerifier.sol",
+    "id": 29818,
+    "exportedSymbols": {
+      "Auth": [
+        34666
+      ],
+      "AuthRequest": [
+        34620
+      ],
+      "AuthType": [
+        34648
+      ],
+      "Claim": [
+        34680
+      ],
+      "ClaimRequest": [
+        34636
+      ],
+      "ClaimType": [
+        34654
+      ],
+      "ISismoConnectVerifier": [
+        29817
+      ],
+      "Signature": [
+        34685
+      ],
+      "SignatureRequest": [
+        34643
+      ],
+      "SismoConnectProof": [
+        34713
+      ],
+      "SismoConnectRequest": [
+        34606
+      ],
+      "SismoConnectResponse": [
+        34698
+      ],
+      "SismoConnectVerifiedResult": [
+        34730
+      ],
+      "VerifiedAuth": [
+        34742
+      ],
+      "VerifiedClaim": [
+        34758
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:688:19",
+    "nodes": [
+      {
+        "id": 29768,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:19",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 29769,
+        "nodeType": "ImportDirective",
+        "src": "58:35:19",
+        "nodes": [],
+        "absolutePath": "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/Structs.sol",
+        "file": "../libs/utils/Structs.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 29818,
+        "sourceUnit": 34759,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 29817,
+        "nodeType": "ContractDefinition",
+        "src": "95:624:19",
+        "nodes": [
+          {
+            "id": 29775,
+            "nodeType": "EventDefinition",
+            "src": "131:36:19",
+            "nodes": [],
+            "anonymous": false,
+            "eventSelector": "5784d9c5cfa0188bf80d31e42ec5d1e25d3bc2f939ed3b17d11faaed5cbfcc1b",
+            "name": "VerifierSet",
+            "nameLocation": "137:11:19",
+            "parameters": {
+              "id": 29774,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29771,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29775,
+                  "src": "149:7:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 29770,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "149:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29773,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29775,
+                  "src": "158:7:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 29772,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "158:7:19",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "148:18:19"
+            }
+          },
+          {
+            "id": 29781,
+            "nodeType": "ErrorDefinition",
+            "src": "171:66:19",
+            "nodes": [],
+            "errorSelector": "327493b1",
+            "name": "AppIdMismatch",
+            "nameLocation": "177:13:19",
+            "parameters": {
+              "id": 29780,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29777,
+                  "mutability": "mutable",
+                  "name": "receivedAppId",
+                  "nameLocation": "199:13:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29781,
+                  "src": "191:21:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes16",
+                    "typeString": "bytes16"
+                  },
+                  "typeName": {
+                    "id": 29776,
+                    "name": "bytes16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "191:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes16",
+                      "typeString": "bytes16"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29779,
+                  "mutability": "mutable",
+                  "name": "expectedAppId",
+                  "nameLocation": "222:13:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29781,
+                  "src": "214:21:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes16",
+                    "typeString": "bytes16"
+                  },
+                  "typeName": {
+                    "id": 29778,
+                    "name": "bytes16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "214:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes16",
+                      "typeString": "bytes16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "190:46:19"
+            }
+          },
+          {
+            "id": 29787,
+            "nodeType": "ErrorDefinition",
+            "src": "240:78:19",
+            "nodes": [],
+            "errorSelector": "c8c42332",
+            "name": "NamespaceMismatch",
+            "nameLocation": "246:17:19",
+            "parameters": {
+              "id": 29786,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29783,
+                  "mutability": "mutable",
+                  "name": "receivedNamespace",
+                  "nameLocation": "272:17:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29787,
+                  "src": "264:25:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes16",
+                    "typeString": "bytes16"
+                  },
+                  "typeName": {
+                    "id": 29782,
+                    "name": "bytes16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "264:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes16",
+                      "typeString": "bytes16"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29785,
+                  "mutability": "mutable",
+                  "name": "expectedNamespace",
+                  "nameLocation": "299:17:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29787,
+                  "src": "291:25:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes16",
+                    "typeString": "bytes16"
+                  },
+                  "typeName": {
+                    "id": 29784,
+                    "name": "bytes16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "291:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes16",
+                      "typeString": "bytes16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "263:54:19"
+            }
+          },
+          {
+            "id": 29793,
+            "nodeType": "ErrorDefinition",
+            "src": "321:71:19",
+            "nodes": [],
+            "errorSelector": "ee883a54",
+            "name": "VersionMismatch",
+            "nameLocation": "327:15:19",
+            "parameters": {
+              "id": 29792,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29789,
+                  "mutability": "mutable",
+                  "name": "requestVersion",
+                  "nameLocation": "351:14:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29793,
+                  "src": "343:22:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 29788,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "343:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29791,
+                  "mutability": "mutable",
+                  "name": "responseVersion",
+                  "nameLocation": "375:15:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29793,
+                  "src": "367:23:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 29790,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "367:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "342:49:19"
+            }
+          },
+          {
+            "id": 29799,
+            "nodeType": "ErrorDefinition",
+            "src": "395:94:19",
+            "nodes": [],
+            "errorSelector": "587110c0",
+            "name": "SignatureMessageMismatch",
+            "nameLocation": "401:24:19",
+            "parameters": {
+              "id": 29798,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29795,
+                  "mutability": "mutable",
+                  "name": "requestMessageSignature",
+                  "nameLocation": "432:23:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29799,
+                  "src": "426:29:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 29794,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "426:5:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29797,
+                  "mutability": "mutable",
+                  "name": "responseMessageSignature",
+                  "nameLocation": "463:24:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29799,
+                  "src": "457:30:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 29796,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "457:5:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "425:63:19"
+            }
+          },
+          {
+            "id": 29811,
+            "nodeType": "FunctionDefinition",
+            "src": "493:155:19",
+            "nodes": [],
+            "functionSelector": "2a7f5d64",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verify",
+            "nameLocation": "502:6:19",
+            "parameters": {
+              "id": 29806,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29802,
+                  "mutability": "mutable",
+                  "name": "response",
+                  "nameLocation": "542:8:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29811,
+                  "src": "514:36:19",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_SismoConnectResponse_$34698_memory_ptr",
+                    "typeString": "struct SismoConnectResponse"
+                  },
+                  "typeName": {
+                    "id": 29801,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 29800,
+                      "name": "SismoConnectResponse",
+                      "nameLocations": [
+                        "514:20:19"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 34698,
+                      "src": "514:20:19"
+                    },
+                    "referencedDeclaration": 34698,
+                    "src": "514:20:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_SismoConnectResponse_$34698_storage_ptr",
+                      "typeString": "struct SismoConnectResponse"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29805,
+                  "mutability": "mutable",
+                  "name": "request",
+                  "nameLocation": "583:7:19",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29811,
+                  "src": "556:34:19",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_SismoConnectRequest_$34606_memory_ptr",
+                    "typeString": "struct SismoConnectRequest"
+                  },
+                  "typeName": {
+                    "id": 29804,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 29803,
+                      "name": "SismoConnectRequest",
+                      "nameLocations": [
+                        "556:19:19"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 34606,
+                      "src": "556:19:19"
+                    },
+                    "referencedDeclaration": 34606,
+                    "src": "556:19:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_SismoConnectRequest_$34606_storage_ptr",
+                      "typeString": "struct SismoConnectRequest"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "508:86:19"
+            },
+            "returnParameters": {
+              "id": 29810,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29809,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29811,
+                  "src": "613:33:19",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_SismoConnectVerifiedResult_$34730_memory_ptr",
+                    "typeString": "struct SismoConnectVerifiedResult"
+                  },
+                  "typeName": {
+                    "id": 29808,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 29807,
+                      "name": "SismoConnectVerifiedResult",
+                      "nameLocations": [
+                        "613:26:19"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 34730,
+                      "src": "613:26:19"
+                    },
+                    "referencedDeclaration": 34730,
+                    "src": "613:26:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_SismoConnectVerifiedResult_$34730_storage_ptr",
+                      "typeString": "struct SismoConnectVerifiedResult"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "612:35:19"
+            },
+            "scope": 29817,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 29816,
+            "nodeType": "FunctionDefinition",
+            "src": "652:65:19",
+            "nodes": [],
+            "functionSelector": "20d5eeb8",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "SISMO_CONNECT_VERSION",
+            "nameLocation": "661:21:19",
+            "parameters": {
+              "id": 29812,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "682:2:19"
+            },
+            "returnParameters": {
+              "id": 29815,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29814,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29816,
+                  "src": "708:7:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 29813,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "708:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "707:9:19"
+            },
+            "scope": 29817,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ISismoConnectVerifier",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          29817
+        ],
+        "name": "ISismoConnectVerifier",
+        "nameLocation": "105:21:19",
+        "scope": 29818,
+        "usedErrors": [
+          29781,
+          29787,
+          29793,
+          29799
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 19
+}

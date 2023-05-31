@@ -1,0 +1,1282 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "accountsTreeValueFromProof",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expectedAccountsTreeValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "AccountsTreeValueMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "claimTypeFromProof",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expectedClaimType",
+          "type": "uint256"
+        }
+      ],
+      "name": "ClaimTypeMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ClaimValueMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "expectedX",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "expectedY",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "inputX",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "inputY",
+          "type": "bytes32"
+        }
+      ],
+      "name": "CommitmentMapperPubKeyMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "destinationFromProof",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "expectedDestination",
+          "type": "address"
+        }
+      ],
+      "name": "DestinationMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "DestinationVerificationNotEnabled",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "extraDataFromProof",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expectedExtraData",
+          "type": "uint256"
+        }
+      ],
+      "name": "InvalidExtraData",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidProof",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "version",
+          "type": "bytes32"
+        }
+      ],
+      "name": "InvalidVersion",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "OnlyOneAuthAndOneClaimIsSupported",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "inputRoot",
+          "type": "uint256"
+        }
+      ],
+      "name": "RegistryRootNotAvailable",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "requestIdentifierFromProof",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expectedRequestIdentifier",
+          "type": "uint256"
+        }
+      ],
+      "name": "RequestIdentifierMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "SourceVerificationNotEnabled",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "userIdFromProof",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expectedUserId",
+          "type": "uint256"
+        }
+      ],
+      "name": "UserIdMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "vaultNamespaceFromProof",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expectedVaultNamespace",
+          "type": "uint256"
+        }
+      ],
+      "name": "VaultNamespaceMismatch",
+      "type": "error"
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220415d440f814cd605be963d463f9f96a6ab87181b4620d7766d8f48f6dcf90c7364736f6c63430008130033",
+    "sourceMap": "58:1096:28:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052600080fdfea2646970667358221220415d440f814cd605be963d463f9f96a6ab87181b4620d7766d8f48f6dcf90c7364736f6c63430008130033",
+    "sourceMap": "58:1096:28:-:0;;;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"accountsTreeValueFromProof\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expectedAccountsTreeValue\",\"type\":\"uint256\"}],\"name\":\"AccountsTreeValueMismatch\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"claimTypeFromProof\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expectedClaimType\",\"type\":\"uint256\"}],\"name\":\"ClaimTypeMismatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ClaimValueMismatch\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"expectedX\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"expectedY\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"inputX\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"inputY\",\"type\":\"bytes32\"}],\"name\":\"CommitmentMapperPubKeyMismatch\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"destinationFromProof\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"expectedDestination\",\"type\":\"address\"}],\"name\":\"DestinationMismatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DestinationVerificationNotEnabled\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"extraDataFromProof\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expectedExtraData\",\"type\":\"uint256\"}],\"name\":\"InvalidExtraData\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidProof\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"version\",\"type\":\"bytes32\"}],\"name\":\"InvalidVersion\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OnlyOneAuthAndOneClaimIsSupported\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"inputRoot\",\"type\":\"uint256\"}],\"name\":\"RegistryRootNotAvailable\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"requestIdentifierFromProof\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expectedRequestIdentifier\",\"type\":\"uint256\"}],\"name\":\"RequestIdentifierMismatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"SourceVerificationNotEnabled\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"userIdFromProof\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expectedUserId\",\"type\":\"uint256\"}],\"name\":\"UserIdMismatch\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"vaultNamespaceFromProof\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"expectedVaultNamespace\",\"type\":\"uint256\"}],\"name\":\"VaultNamespaceMismatch\",\"type\":\"error\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/verifiers/IHydraS2Verifier.sol\":\"IHydraS2Verifier\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/openzeppelin-contracts/contracts/\",\":@sismo-core/hydra-s2/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/package/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":hydra-s2-zkps/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":sismo-connect-onchain-verifier/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/\",\":sismo-connect-packages/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/\",\":sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/\"]},\"sources\":{\"lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/verifiers/IHydraS2Verifier.sol\":{\"keccak256\":\"0x184f4691fc2b0a8dc77c74e9ebda5be9029b4e6f3aee396b95fa7b41b93d90d3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ddf6deaaa08759d94fb33dd614d8610cec1c13f1b6cf61a46e22e02aace20d1a\",\"dweb:/ipfs/QmU32LptYUkidVdZNMhnGdvrJxg62c1MG1zWAWQzERJQMG\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.19+commit.7dd6d404"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "accountsTreeValueFromProof",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expectedAccountsTreeValue",
+              "type": "uint256"
+            }
+          ],
+          "type": "error",
+          "name": "AccountsTreeValueMismatch"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "claimTypeFromProof",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expectedClaimType",
+              "type": "uint256"
+            }
+          ],
+          "type": "error",
+          "name": "ClaimTypeMismatch"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "ClaimValueMismatch"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "expectedX",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "expectedY",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "inputX",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "inputY",
+              "type": "bytes32"
+            }
+          ],
+          "type": "error",
+          "name": "CommitmentMapperPubKeyMismatch"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "destinationFromProof",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "expectedDestination",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "DestinationMismatch"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "DestinationVerificationNotEnabled"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "extraDataFromProof",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expectedExtraData",
+              "type": "uint256"
+            }
+          ],
+          "type": "error",
+          "name": "InvalidExtraData"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "InvalidProof"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "version",
+              "type": "bytes32"
+            }
+          ],
+          "type": "error",
+          "name": "InvalidVersion"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "OnlyOneAuthAndOneClaimIsSupported"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "inputRoot",
+              "type": "uint256"
+            }
+          ],
+          "type": "error",
+          "name": "RegistryRootNotAvailable"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "requestIdentifierFromProof",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expectedRequestIdentifier",
+              "type": "uint256"
+            }
+          ],
+          "type": "error",
+          "name": "RequestIdentifierMismatch"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "SourceVerificationNotEnabled"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "userIdFromProof",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expectedUserId",
+              "type": "uint256"
+            }
+          ],
+          "type": "error",
+          "name": "UserIdMismatch"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "vaultNamespaceFromProof",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "expectedVaultNamespace",
+              "type": "uint256"
+            }
+          ],
+          "type": "error",
+          "name": "VaultNamespaceMismatch"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@openzeppelin/contracts/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/openzeppelin-contracts/contracts/",
+        ":@sismo-core/hydra-s2/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/package/contracts/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        ":forge-std/=lib/forge-std/src/",
+        ":hydra-s2-zkps/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/",
+        ":openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        ":sismo-connect-onchain-verifier/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/",
+        ":sismo-connect-packages/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/",
+        ":sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/verifiers/IHydraS2Verifier.sol": "IHydraS2Verifier"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/verifiers/IHydraS2Verifier.sol": {
+        "keccak256": "0x184f4691fc2b0a8dc77c74e9ebda5be9029b4e6f3aee396b95fa7b41b93d90d3",
+        "urls": [
+          "bzz-raw://ddf6deaaa08759d94fb33dd614d8610cec1c13f1b6cf61a46e22e02aace20d1a",
+          "dweb:/ipfs/QmU32LptYUkidVdZNMhnGdvrJxg62c1MG1zWAWQzERJQMG"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/verifiers/IHydraS2Verifier.sol",
+    "id": 34902,
+    "exportedSymbols": {
+      "IHydraS2Verifier": [
+        34901
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:1123:28",
+    "nodes": [
+      {
+        "id": 34830,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:28",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".17"
+        ]
+      },
+      {
+        "id": 34901,
+        "nodeType": "ContractDefinition",
+        "src": "58:1096:28",
+        "nodes": [
+          {
+            "id": 34832,
+            "nodeType": "ErrorDefinition",
+            "src": "88:21:28",
+            "nodes": [],
+            "errorSelector": "09bde339",
+            "name": "InvalidProof",
+            "nameLocation": "94:12:28",
+            "parameters": {
+              "id": 34831,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "106:2:28"
+            }
+          },
+          {
+            "id": 34834,
+            "nodeType": "ErrorDefinition",
+            "src": "112:42:28",
+            "nodes": [],
+            "errorSelector": "21343564",
+            "name": "OnlyOneAuthAndOneClaimIsSupported",
+            "nameLocation": "118:33:28",
+            "parameters": {
+              "id": 34833,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "151:2:28"
+            }
+          },
+          {
+            "id": 34838,
+            "nodeType": "ErrorDefinition",
+            "src": "158:38:28",
+            "nodes": [],
+            "errorSelector": "e84925c7",
+            "name": "InvalidVersion",
+            "nameLocation": "164:14:28",
+            "parameters": {
+              "id": 34837,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34836,
+                  "mutability": "mutable",
+                  "name": "version",
+                  "nameLocation": "187:7:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34838,
+                  "src": "179:15:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 34835,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "179:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "178:17:28"
+            }
+          },
+          {
+            "id": 34842,
+            "nodeType": "ErrorDefinition",
+            "src": "199:50:28",
+            "nodes": [],
+            "errorSelector": "2a2172c9",
+            "name": "RegistryRootNotAvailable",
+            "nameLocation": "205:24:28",
+            "parameters": {
+              "id": 34841,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34840,
+                  "mutability": "mutable",
+                  "name": "inputRoot",
+                  "nameLocation": "238:9:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34842,
+                  "src": "230:17:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34839,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "230:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "229:19:28"
+            }
+          },
+          {
+            "id": 34848,
+            "nodeType": "ErrorDefinition",
+            "src": "252:85:28",
+            "nodes": [],
+            "errorSelector": "e151b336",
+            "name": "DestinationMismatch",
+            "nameLocation": "258:19:28",
+            "parameters": {
+              "id": 34847,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34844,
+                  "mutability": "mutable",
+                  "name": "destinationFromProof",
+                  "nameLocation": "286:20:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34848,
+                  "src": "278:28:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 34843,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "278:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34846,
+                  "mutability": "mutable",
+                  "name": "expectedDestination",
+                  "nameLocation": "316:19:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34848,
+                  "src": "308:27:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 34845,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "308:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "277:59:28"
+            }
+          },
+          {
+            "id": 34858,
+            "nodeType": "ErrorDefinition",
+            "src": "340:127:28",
+            "nodes": [],
+            "errorSelector": "16be6e1d",
+            "name": "CommitmentMapperPubKeyMismatch",
+            "nameLocation": "346:30:28",
+            "parameters": {
+              "id": 34857,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34850,
+                  "mutability": "mutable",
+                  "name": "expectedX",
+                  "nameLocation": "390:9:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34858,
+                  "src": "382:17:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 34849,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "382:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34852,
+                  "mutability": "mutable",
+                  "name": "expectedY",
+                  "nameLocation": "413:9:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34858,
+                  "src": "405:17:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 34851,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "405:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34854,
+                  "mutability": "mutable",
+                  "name": "inputX",
+                  "nameLocation": "436:6:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34858,
+                  "src": "428:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 34853,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "428:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34856,
+                  "mutability": "mutable",
+                  "name": "inputY",
+                  "nameLocation": "456:6:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34858,
+                  "src": "448:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 34855,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "448:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "376:90:28"
+            }
+          },
+          {
+            "id": 34864,
+            "nodeType": "ErrorDefinition",
+            "src": "471:79:28",
+            "nodes": [],
+            "errorSelector": "109a7abc",
+            "name": "ClaimTypeMismatch",
+            "nameLocation": "477:17:28",
+            "parameters": {
+              "id": 34863,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34860,
+                  "mutability": "mutable",
+                  "name": "claimTypeFromProof",
+                  "nameLocation": "503:18:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34864,
+                  "src": "495:26:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34859,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "495:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34862,
+                  "mutability": "mutable",
+                  "name": "expectedClaimType",
+                  "nameLocation": "531:17:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34864,
+                  "src": "523:25:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34861,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "523:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "494:55:28"
+            }
+          },
+          {
+            "id": 34870,
+            "nodeType": "ErrorDefinition",
+            "src": "553:115:28",
+            "nodes": [],
+            "errorSelector": "92720163",
+            "name": "RequestIdentifierMismatch",
+            "nameLocation": "559:25:28",
+            "parameters": {
+              "id": 34869,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34866,
+                  "mutability": "mutable",
+                  "name": "requestIdentifierFromProof",
+                  "nameLocation": "598:26:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34870,
+                  "src": "590:34:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34865,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "590:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34868,
+                  "mutability": "mutable",
+                  "name": "expectedRequestIdentifier",
+                  "nameLocation": "638:25:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34870,
+                  "src": "630:33:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34867,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "630:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "584:83:28"
+            }
+          },
+          {
+            "id": 34876,
+            "nodeType": "ErrorDefinition",
+            "src": "671:78:28",
+            "nodes": [],
+            "errorSelector": "76745818",
+            "name": "InvalidExtraData",
+            "nameLocation": "677:16:28",
+            "parameters": {
+              "id": 34875,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34872,
+                  "mutability": "mutable",
+                  "name": "extraDataFromProof",
+                  "nameLocation": "702:18:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34876,
+                  "src": "694:26:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34871,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "694:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34874,
+                  "mutability": "mutable",
+                  "name": "expectedExtraData",
+                  "nameLocation": "730:17:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34876,
+                  "src": "722:25:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34873,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "722:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "693:55:28"
+            }
+          },
+          {
+            "id": 34878,
+            "nodeType": "ErrorDefinition",
+            "src": "752:27:28",
+            "nodes": [],
+            "errorSelector": "9c25b73a",
+            "name": "ClaimValueMismatch",
+            "nameLocation": "758:18:28",
+            "parameters": {
+              "id": 34877,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "776:2:28"
+            }
+          },
+          {
+            "id": 34880,
+            "nodeType": "ErrorDefinition",
+            "src": "782:42:28",
+            "nodes": [],
+            "errorSelector": "dcb46f4a",
+            "name": "DestinationVerificationNotEnabled",
+            "nameLocation": "788:33:28",
+            "parameters": {
+              "id": 34879,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "821:2:28"
+            }
+          },
+          {
+            "id": 34882,
+            "nodeType": "ErrorDefinition",
+            "src": "827:37:28",
+            "nodes": [],
+            "errorSelector": "38dffbdc",
+            "name": "SourceVerificationNotEnabled",
+            "nameLocation": "833:28:28",
+            "parameters": {
+              "id": 34881,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "861:2:28"
+            }
+          },
+          {
+            "id": 34888,
+            "nodeType": "ErrorDefinition",
+            "src": "867:115:28",
+            "nodes": [],
+            "errorSelector": "fe405c77",
+            "name": "AccountsTreeValueMismatch",
+            "nameLocation": "873:25:28",
+            "parameters": {
+              "id": 34887,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34884,
+                  "mutability": "mutable",
+                  "name": "accountsTreeValueFromProof",
+                  "nameLocation": "912:26:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34888,
+                  "src": "904:34:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34883,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "904:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34886,
+                  "mutability": "mutable",
+                  "name": "expectedAccountsTreeValue",
+                  "nameLocation": "952:25:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34888,
+                  "src": "944:33:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34885,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "944:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "898:83:28"
+            }
+          },
+          {
+            "id": 34894,
+            "nodeType": "ErrorDefinition",
+            "src": "985:94:28",
+            "nodes": [],
+            "errorSelector": "672d2070",
+            "name": "VaultNamespaceMismatch",
+            "nameLocation": "991:22:28",
+            "parameters": {
+              "id": 34893,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34890,
+                  "mutability": "mutable",
+                  "name": "vaultNamespaceFromProof",
+                  "nameLocation": "1022:23:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34894,
+                  "src": "1014:31:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34889,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1014:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34892,
+                  "mutability": "mutable",
+                  "name": "expectedVaultNamespace",
+                  "nameLocation": "1055:22:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34894,
+                  "src": "1047:30:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34891,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1047:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1013:65:28"
+            }
+          },
+          {
+            "id": 34900,
+            "nodeType": "ErrorDefinition",
+            "src": "1082:70:28",
+            "nodes": [],
+            "errorSelector": "0cc76531",
+            "name": "UserIdMismatch",
+            "nameLocation": "1088:14:28",
+            "parameters": {
+              "id": 34899,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 34896,
+                  "mutability": "mutable",
+                  "name": "userIdFromProof",
+                  "nameLocation": "1111:15:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34900,
+                  "src": "1103:23:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34895,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1103:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34898,
+                  "mutability": "mutable",
+                  "name": "expectedUserId",
+                  "nameLocation": "1136:14:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 34900,
+                  "src": "1128:22:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34897,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1128:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1102:49:28"
+            }
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IHydraS2Verifier",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          34901
+        ],
+        "name": "IHydraS2Verifier",
+        "nameLocation": "67:16:28",
+        "scope": 34902,
+        "usedErrors": [
+          34832,
+          34834,
+          34838,
+          34842,
+          34848,
+          34858,
+          34864,
+          34870,
+          34876,
+          34878,
+          34880,
+          34882,
+          34888,
+          34894,
+          34900
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 28
+}
