@@ -147,7 +147,7 @@ contract BlockLeaks is
     }
 
     function writeLeak(
-        // bytes memory response,
+        bytes memory response,
         bytes16 _groupId,
         uint8 _value,
         string calldata _title,
@@ -158,11 +158,11 @@ contract BlockLeaks is
         uint32 actualCount = uint32(leaksAmount);
         id = encodeLeak(_title, _description, _uri);
         if (messages[id].messageId != 0) revert LeaksAlreadyExist();
-        // verify({
-        //     responseBytes: response,
-        //     claim: buildClaim({groupId: _groupId, value: _value}),
-        //     signature: buildSignature({message: abi.encode(msg.sender)})
-        // });
+        verify({
+            responseBytes: response,
+            claim: buildClaim({groupId: _groupId, value: _value}),
+            signature: buildSignature({message: abi.encode(msg.sender)})
+        });
 
         Leak memory message_ = Leak(
             Status.UNEVALUATED,
