@@ -1,0 +1,116 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220d9d04cc89b773738247a78bdbf1beb4c9e7f308c014fdce99bc6d93f1bd0288d64736f6c63430008130033",
+    "sourceMap": "58:24:22:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;58:24:22;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220d9d04cc89b773738247a78bdbf1beb4c9e7f308c014fdce99bc6d93f1bd0288d64736f6c63430008130033",
+    "sourceMap": "58:24:22:-:0;;;;;;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/BlockLeaksLib.sol\":\"BlockLeaksLib\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/openzeppelin-contracts/contracts/\",\":@sismo-core/hydra-s2/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/package/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":hydra-s2-zkps/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":sismo-connect-onchain-verifier/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/\",\":sismo-connect-packages/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/\",\":sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/\"]},\"sources\":{\"src/BlockLeaksLib.sol\":{\"keccak256\":\"0x4f745d7a4e20c3c31c08131d528feeee86561ed5a41becd0b549f169e713e1ea\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5990735949c3a0625d8dd1a87ee6837dc2b43dd490e87f7b2aa0619f83ae461\",\"dweb:/ipfs/QmdpEhqrK6obFfxddMg7Pas2aHuAx5oApZHmVgYfSpyZgg\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.19+commit.7dd6d404"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":@openzeppelin/contracts/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/openzeppelin-contracts/contracts/",
+        ":@sismo-core/hydra-s2/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/package/contracts/",
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        ":forge-std/=lib/forge-std/src/",
+        ":hydra-s2-zkps/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/lib/hydra-s2-zkps/",
+        ":openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        ":sismo-connect-onchain-verifier/=lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/",
+        ":sismo-connect-packages/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/",
+        ":sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/BlockLeaksLib.sol": "BlockLeaksLib"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/BlockLeaksLib.sol": {
+        "keccak256": "0x4f745d7a4e20c3c31c08131d528feeee86561ed5a41becd0b549f169e713e1ea",
+        "urls": [
+          "bzz-raw://c5990735949c3a0625d8dd1a87ee6837dc2b43dd490e87f7b2aa0619f83ae461",
+          "dweb:/ipfs/QmdpEhqrK6obFfxddMg7Pas2aHuAx5oApZHmVgYfSpyZgg"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/BlockLeaksLib.sol",
+    "id": 8278,
+    "exportedSymbols": {
+      "BlockLeaksLib": [
+        8277
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:51:22",
+    "nodes": [
+      {
+        "id": 8276,
+        "nodeType": "PragmaDirective",
+        "src": "32:24:22",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".19"
+        ]
+      },
+      {
+        "id": 8277,
+        "nodeType": "ContractDefinition",
+        "src": "58:24:22",
+        "nodes": [],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "BlockLeaksLib",
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          8277
+        ],
+        "name": "BlockLeaksLib",
+        "nameLocation": "66:13:22",
+        "scope": 8278,
+        "usedErrors": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 22
+}

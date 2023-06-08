@@ -5,13 +5,13 @@ import "openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Burnable.so
 import "openzeppelin-contracts/contracts/security/ReentrancyGuard.sol";
 import "sismo-connect-solidity/SismoLib.sol";
 
-contract LeaksToken is ReentrancyGuard, ERC20Burnable {
+contract GrantVault is ReentrancyGuard, ERC20Burnable {
     address payable public multisig;
     address public blockLeaksContract;
 
     mapping(address => uint256) contributed;
 
-    constructor(address payable multisig_, address blockLeaksContract_) ERC20("BlockLeaks Token", "LEAKS") {
+    constructor(address payable multisig_, address blockLeaksContract_) ERC20("BlockLeaks Token", "LEAK") {
         multisig = multisig_;
         blockLeaksContract = blockLeaksContract_;
     }

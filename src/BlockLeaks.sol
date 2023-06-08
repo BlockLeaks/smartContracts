@@ -40,29 +40,32 @@ contract BlockLeaks is
 
     bytes16 public constant APP_ID = 0x3c0e4da0cf926dfbf5e31aa66f77199b;
 
-    EnumerableSet.Bytes32Set private groupIds;
+    EnumerableSet.Bytes32Set private groupsIdBytes32;
 
-    address payable public multisig;
-    uint256 public messageCount;
+    address public multisig;
+    uint256 public leaksAmount;
     uint256 public minStakePrice;
     BlockLeaksVault public grantVault;
 
     mapping(bytes32 => Leak) private messages;
     mapping(address => int64) public trustScore;
-    mapping(address => uint256) public creditNote;
     mapping(bytes16 => EnumerableSet.Bytes32Set) private messagesByGroupId;
     mapping(address => EnumerableSet.Bytes32Set) private messageBySender;
 
-    event LeaksAdded(uint256 indexed id, bytes32 indexed groupId, string title, uint256 no);
-    event LeaksCancelled(Leak);
+    event LeakAdded(uint256 indexed id, bytes32 indexed groupId, string title, uint256 no);
+    event LeakCancelled(Leak);
+
+    error NotAuthorised(address sender, address admin);
+    error ArraysLengthDiffers(uint256 x, uint256 y);
+    error LeaksAlreadyExist();
+    error BelowMinimumStake(uint256 value, uint256 minStakePrice);
+    error WrongLeakStatus(Status current);
+    error TransferError();
+    error NotAContract(address sender);
 
     modifier onlyMultisig() {
-        require(msg.sender == multisig, "Not multisig");
+        if (msg.sender != multisig) revert NotAuthorised(msg.sender, multisig);
         _;
-    }
-
-    receive() external payable {
-        multisig.transfer(msg.value);
     }
 
     constructor(
@@ -73,11 +76,24 @@ contract BlockLeaks is
         grantVault = BlockLeaksVault(_grantVault);
     }
 
-    function changeMultisig(address payable _newMultisig) public onlyMultisig {
+    receive() external payable {
+        transfer(msg.value, multisig);
+    }
+
+    event MultisigUpdated(address oldMultisig, address newMultisig);
+    event MinimumStakeAmountUpdated(uint256 oldMinimumStake, uint256 newMinimumStake);
+
+    function changeMultisig(address _newMultisig) external onlyMultisig {
+        if (_newMultisig.code.length == 0) revert NotAContract(_newMultisig);
+
+        emit MultisigUpdated(multisig, _newMultisig);
+
         multisig = _newMultisig;
     }
 
-    function newminStakePrice(uint256 _newStake) public onlyMultisig {
+    function setMinimumStakeAmount(uint256 _newStake) external onlyMultisig {
+        emit MinimumStakeAmountUpdated(minStakePrice, _newStake);
+
         minStakePrice = _newStake;
     }
 
@@ -85,75 +101,49 @@ contract BlockLeaks is
         token.safeTransfer(msg.sender, token.balanceOf(address(this)));
     }
 
-    function withdrawToMsgOwner(bytes32[] memory _msgIds) public onlyMultisig {
+    function verifyLeaks(bytes32[] memory _msgIds, bool[] calldata isLeakValid) external onlyMultisig {
         unchecked {
             for (uint256 i = 0; i < _msgIds.length; i++) {
-                withdrawToMsgOwner(_msgIds[i]);
+                if (isLeakValid[i]) withdrawToMsgOwner(_msgIds[i]);
+                else withdrawToMultisig(_msgIds[i]);
             }
         }
     }
 
-    function encodeLeak(string calldata title, string calldata content, string calldata uri)
-        public
-        pure
-        returns (bytes32)
-    {
-        return keccak256(abi.encode(title, content, uri));
-    }
-
-    function withdrawSomeToMultisig(bytes32[] memory _msgIds) public onlyMultisig {
-        unchecked {
-            for (uint256 i = 0; i < _msgIds.length; i++) {
-                withdrawToMultisig(_msgIds[i]);
-            }
-        }
-    }
-
-    function withdrawToMsgOwner(bytes32 _msgId) public onlyMultisig {
-        Leak memory _msgInfo = messages[_msgId];
-        require(_msgInfo.status == Status.UNVERIFIED, "Already withdrawn");
-        _msgInfo.status = Status.VALIDATED;
-
-        grantVault.mint(
-            _msgInfo.messageOwner, _msgInfo.criticalRatioX10 * _msgInfo.stakedAmount / 10 - _msgInfo.stakedAmount
-        );
-
-        (bool success,) = payable(_msgInfo.messageOwner).call{value: _msgInfo.stakedAmount}("");
-        require(success, "Transfer Error");
-
-        trustScore[_msgInfo.messageOwner] += int64(uint64(_msgInfo.criticalRatioX10));
-    }
-
-    function withdrawToMultisig(bytes32 _msgId) public onlyMultisig {
-        Leak memory _msgInfo = messages[_msgId];
-
-        require(_msgInfo.status == Status.UNVERIFIED, "Already withdrawn");
-        _msgInfo.status = Status.FAKE_LEAK;
-        (bool success,) = payable(multisig).call{value: _msgInfo.stakedAmount}("");
-        require(success, "Transfer Error");
-        trustScore[_msgInfo.messageOwner] -= int64(uint64(_msgInfo.criticalRatioX10));
-    }
-
-    function setCreditNote(int256 amount, address creditor) public onlyMultisig {
-        // require()
-        uint256 note = creditNote[creditor];
-        creditNote[creditor] = amount < 0 ? note - uint256(-amount) : note + uint256(amount); // OverFloaw already handled by sol 8^;
+    function verifyLeak(bytes32 _msgIds, bool isLeakValid) external onlyMultisig {
+        if (isLeakValid) withdrawToMsgOwner(_msgIds);
+        else withdrawToMultisig(_msgIds);
     }
 
     function evaluateLeak(uint32[] calldata ratios, bytes32[] calldata messagesId) external onlyMultisig {
         uint256 len = ratios.length;
-        require(messagesId.length == len, "len mismatching");
+        if (messagesId.length != len) revert ArraysLengthDiffers(messagesId.length, len);
         unchecked {
             for (uint256 i = 0; i < len;) {
                 Leak memory msg_ = messages[messagesId[i]];
                 uint256 status = uint256(msg_.status);
-                require(status <= uint256(Status.UNVERIFIED), "Not now");
+
+                if (status > uint256(Status.UNVERIFIED)) revert WrongLeakStatus(Status(status));
                 if (status == uint256(Status.UNEVALUATED)) msg_.status = Status.UNVERIFIED;
+
                 msg_.criticalRatioX10 = ratios[i];
                 messages[messagesId[i]] = msg_;
                 ++i;
             }
         }
+    }
+
+    function cancelLeak(bytes16 _groupId, bytes32 leakId) external {
+        Leak memory leak = messages[leakId];
+
+        if (uint256(leak.status) > uint256(Status.UNVERIFIED)) revert WrongLeakStatus(leak.status);
+        if (leak.messageOwner != msg.sender) revert NotAuthorised(msg.sender, leak.messageOwner);
+
+        transfer(leak.stakedAmount, leak.messageOwner);
+
+        deleteLeak(leakId, _groupId, msg.sender);
+
+        emit LeakCancelled(leak);
     }
 
     function writeLeak(
@@ -163,11 +153,11 @@ contract BlockLeaks is
         string calldata _title,
         string calldata _description,
         string calldata _uri
-    ) public payable returns (bytes32 id) {
-        require(minStakePrice <= msg.value, "Need to stake more");
-        uint32 actualCount = uint32(messageCount);
+    ) external payable returns (bytes32 id) {
+        if (minStakePrice > msg.value) revert BelowMinimumStake(msg.value, minStakePrice);
+        uint32 actualCount = uint32(leaksAmount);
         id = encodeLeak(_title, _description, _uri);
-        require(messages[id].messageId == 0, "Leak already exists");
+        if (messages[id].messageId != 0) revert LeaksAlreadyExist();
         // verify({
         //     responseBytes: response,
         //     claim: buildClaim({groupId: _groupId, value: _value}),
@@ -189,46 +179,23 @@ contract BlockLeaks is
             id
         );
         messages[id] = message_;
-        if (!groupIds.contains(_groupId)) addrGroup(_groupId);
+        if (!groupsIdBytes32.contains(_groupId)) addrGroup(_groupId);
 
         addLeak(id, _groupId, msg.sender);
 
-        emit LeaksAdded(actualCount, _groupId, _title, messageCount);
+        emit LeakAdded(actualCount, _groupId, _title, leaksAmount);
     }
 
-    function addrGroup(bytes16 _groupId) internal {
-        groupIds.add(_groupId);
-    }
-
-    function cancelLeak(bytes16 _groupId, bytes32 leakId, address to) public {
-        Leak memory leak = messages[leakId];
-        require(uint256(leak.status) <= uint256(Status.UNVERIFIED), "Not authorized : unverified");
-        require(leak.messageOwner == msg.sender, "Not authorized : not owner");
-        (bool success,) = payable(to).call{value: leak.stakedAmount}("");
-        require(success, "Error in call function");
-        deleteLeak(leakId, _groupId, msg.sender);
-        emit LeaksCancelled(leak);
-    }
-
-    function deleteLeak(bytes32 leakId, bytes16 _groupId, address sender) internal {
-        messagesByGroupId[_groupId].remove(leakId);
-        messageBySender[sender].remove(leakId);
-        --messageCount;
-    }
-
-    function addLeak(bytes32 leakId, bytes16 _groupId, address sender) internal {
-        messagesByGroupId[_groupId].add(leakId);
-        messageBySender[sender].add(leakId);
-        ++messageCount;
-    }
-
-    function getGroupIds() public view returns (bytes16[] memory) {
-        uint256 count = groupIds.length();
-        bytes16[] memory ids = new bytes16[](count);
-        for (uint256 i = 0; i < count; i++) {
-            ids[i] = bytes16(groupIds.at(i));
+    function getGroupsId() external view returns (bytes16[] memory groupsId) {
+        bytes32[] memory groups = groupsIdBytes32.values();
+        uint256 groupsLen = groups.length;
+        groupsId = new bytes16[](groupsLen);
+        unchecked {
+            for (uint256 i = 0; i < groupsLen;) {
+                groupsId[i] = bytes16(groups[i]);
+                ++i;
+            }
         }
-        return ids;
     }
 
     function getLeaksIDByGroupId(bytes16 _groupId) external view returns (bytes32[] memory) {
@@ -255,9 +222,9 @@ contract BlockLeaks is
         return messages_;
     }
 
-    function getAllLeaksId() public view returns (bytes32[] memory total) {
-        total = new bytes32[](messageCount);
-        bytes32[] memory groups = groupIds.values();
+    function getAllLeaksId() external view returns (bytes32[] memory total) {
+        total = new bytes32[](leaksAmount);
+        bytes32[] memory groups = groupsIdBytes32.values();
         uint256 numberOfGroups = groups.length;
         uint256 k;
         for (uint256 i = 0; i < numberOfGroups;) {
@@ -269,5 +236,57 @@ contract BlockLeaks is
             }
             ++i;
         }
+    }
+
+    function encodeLeak(string calldata title, string calldata content, string calldata uri)
+        public
+        pure
+        returns (bytes32)
+    {
+        return keccak256(abi.encode(title, content, uri));
+    }
+
+    function withdrawToMsgOwner(bytes32 _msgId) internal {
+        Leak memory _msgInfo = messages[_msgId];
+        if (_msgInfo.status != Status.UNVERIFIED) revert WrongLeakStatus(_msgInfo.status);
+        _msgInfo.status = Status.VALIDATED;
+
+        grantVault.mint(
+            _msgInfo.messageOwner, _msgInfo.criticalRatioX10 * _msgInfo.stakedAmount / 10 - _msgInfo.stakedAmount
+        );
+        transfer(_msgInfo.stakedAmount, _msgInfo.messageOwner);
+
+        trustScore[_msgInfo.messageOwner] += int64(uint64(_msgInfo.criticalRatioX10));
+    }
+
+    function transfer(uint256 amount, address receiver) internal {
+        (bool success,) = payable(receiver).call{value: amount}("");
+        if (!success) revert TransferError();
+    }
+
+    function withdrawToMultisig(bytes32 _msgId) internal {
+        Leak memory _msgInfo = messages[_msgId];
+
+        if (_msgInfo.status != Status.UNVERIFIED) revert WrongLeakStatus(_msgInfo.status);
+        _msgInfo.status = Status.FAKE_LEAK;
+
+        transfer(_msgInfo.stakedAmount, multisig);
+        trustScore[_msgInfo.messageOwner] -= int64(uint64(_msgInfo.criticalRatioX10));
+    }
+
+    function addrGroup(bytes16 _groupId) internal {
+        groupsIdBytes32.add(_groupId);
+    }
+
+    function deleteLeak(bytes32 leakId, bytes16 _groupId, address sender) internal {
+        messagesByGroupId[_groupId].remove(leakId);
+        messageBySender[sender].remove(leakId);
+        --leaksAmount;
+    }
+
+    function addLeak(bytes32 leakId, bytes16 _groupId, address sender) internal {
+        messagesByGroupId[_groupId].add(leakId);
+        messageBySender[sender].add(leakId);
+        ++leaksAmount;
     }
 }

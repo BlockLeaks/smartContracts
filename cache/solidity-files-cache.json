@@ -11,46 +11,6 @@
     ]
   },
   "files": {
-    "lib/forge-std/lib/ds-test/src/test.sol": {
-      "lastModificationDate": 1684246219038,
-      "contentHash": "9febff9d09f18af5306669dc276c4c43",
-      "sourceName": "lib/forge-std/lib/ds-test/src/test.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.5.0",
-      "artifacts": {
-        "DSTest": {
-          "0.8.19+commit.7dd6d404.Darwin.appleclang": "test.sol/DSTest.json"
-        }
-      }
-    },
     "lib/forge-std/src/Base.sol": {
       "lastModificationDate": 1684246216127,
       "contentHash": "8f04bbbb2c16f79e14fdc321695a8ec2",
@@ -152,49 +112,6 @@
         }
       }
     },
-    "lib/forge-std/src/StdAssertions.sol": {
-      "lastModificationDate": 1684246216127,
-      "contentHash": "6cc2858240bcd443debbbf075490e325",
-      "sourceName": "lib/forge-std/src/StdAssertions.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [
-        "lib/forge-std/lib/ds-test/src/test.sol",
-        "lib/forge-std/src/StdMath.sol"
-      ],
-      "versionRequirement": ">=0.6.2, <0.9.0",
-      "artifacts": {
-        "StdAssertions": {
-          "0.8.19+commit.7dd6d404.Darwin.appleclang": "StdAssertions.sol/StdAssertions.json"
-        }
-      }
-    },
     "lib/forge-std/src/StdChains.sol": {
       "lastModificationDate": 1684246216127,
       "contentHash": "9c76820952c8f5e2fc02f872dc3afeb4",
@@ -280,86 +197,6 @@
         },
         "StdCheatsSafe": {
           "0.8.19+commit.7dd6d404.Darwin.appleclang": "StdCheats.sol/StdCheatsSafe.json"
-        }
-      }
-    },
-    "lib/forge-std/src/StdError.sol": {
-      "lastModificationDate": 1684246216128,
-      "contentHash": "64c896e1276a291776e5ea5aecb3870a",
-      "sourceName": "lib/forge-std/src/StdError.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.6.2, <0.9.0",
-      "artifacts": {
-        "stdError": {
-          "0.8.19+commit.7dd6d404.Darwin.appleclang": "StdError.sol/stdError.json"
-        }
-      }
-    },
-    "lib/forge-std/src/StdInvariant.sol": {
-      "lastModificationDate": 1684246216128,
-      "contentHash": "12c06010ec43ce935ed209d5aca30828",
-      "sourceName": "lib/forge-std/src/StdInvariant.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.6.2, <0.9.0",
-      "artifacts": {
-        "StdInvariant": {
-          "0.8.19+commit.7dd6d404.Darwin.appleclang": "StdInvariant.sol/StdInvariant.json"
         }
       }
     },
@@ -490,48 +327,6 @@
         }
       }
     },
-    "lib/forge-std/src/StdStyle.sol": {
-      "lastModificationDate": 1684246216128,
-      "contentHash": "820e6f6b7704f0c980fae604b1e34b18",
-      "sourceName": "lib/forge-std/src/StdStyle.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [
-        "lib/forge-std/src/Vm.sol"
-      ],
-      "versionRequirement": ">=0.4.22, <0.9.0",
-      "artifacts": {
-        "StdStyle": {
-          "0.8.19+commit.7dd6d404.Darwin.appleclang": "StdStyle.sol/StdStyle.json"
-        }
-      }
-    },
     "lib/forge-std/src/StdUtils.sol": {
       "lastModificationDate": 1684246216128,
       "contentHash": "3c8a13d3abf093886cea4e028158b601",
@@ -572,63 +367,6 @@
       "artifacts": {
         "StdUtils": {
           "0.8.19+commit.7dd6d404.Darwin.appleclang": "StdUtils.sol/StdUtils.json"
-        }
-      }
-    },
-    "lib/forge-std/src/Test.sol": {
-      "lastModificationDate": 1684246216129,
-      "contentHash": "bc9d74a0c612e1c2b66cca2973bcc803",
-      "sourceName": "lib/forge-std/src/Test.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [
-        "lib/forge-std/lib/ds-test/src/test.sol",
-        "lib/forge-std/src/Base.sol",
-        "lib/forge-std/src/StdAssertions.sol",
-        "lib/forge-std/src/StdChains.sol",
-        "lib/forge-std/src/StdCheats.sol",
-        "lib/forge-std/src/StdError.sol",
-        "lib/forge-std/src/StdInvariant.sol",
-        "lib/forge-std/src/StdJson.sol",
-        "lib/forge-std/src/StdMath.sol",
-        "lib/forge-std/src/StdStorage.sol",
-        "lib/forge-std/src/StdStyle.sol",
-        "lib/forge-std/src/StdUtils.sol",
-        "lib/forge-std/src/Vm.sol",
-        "lib/forge-std/src/console.sol",
-        "lib/forge-std/src/console2.sol",
-        "lib/forge-std/src/interfaces/IMulticall3.sol"
-      ],
-      "versionRequirement": ">=0.6.2, <0.9.0",
-      "artifacts": {
-        "Test": {
-          "0.8.19+commit.7dd6d404.Darwin.appleclang": "Test.sol/Test.json"
         }
       }
     },
@@ -1738,8 +1476,8 @@
       }
     },
     "src/BlockLeaks.sol": {
-      "lastModificationDate": 1685548827197,
-      "contentHash": "076e2a0bc3e518b369858db09d9f200f",
+      "lastModificationDate": 1686166305562,
+      "contentHash": "c65c3b2b5b5cec8787aa5174bc76ad35",
       "sourceName": "src/BlockLeaks.sol",
       "solcConfig": {
         "settings": {
@@ -1798,10 +1536,50 @@
         }
       }
     },
-    "src/LeaksToken.sol": {
-      "lastModificationDate": 1685548577694,
-      "contentHash": "4dfe94afc398a8857a453af18379002f",
-      "sourceName": "src/LeaksToken.sol",
+    "src/BlockLeaksLib.sol": {
+      "lastModificationDate": 1686163175689,
+      "contentHash": "2951bad1dc783b20629a931c6825e43d",
+      "sourceName": "src/BlockLeaksLib.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.19",
+      "artifacts": {
+        "BlockLeaksLib": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "BlockLeaksLib.sol/BlockLeaksLib.json"
+        }
+      }
+    },
+    "src/GrantVault.sol": {
+      "lastModificationDate": 1686166240097,
+      "contentHash": "398289188df94255c2e4e843a2f0a28d",
+      "sourceName": "src/GrantVault.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -1851,14 +1629,14 @@
       ],
       "versionRequirement": "^0.8.19",
       "artifacts": {
-        "LeaksToken": {
-          "0.8.19+commit.7dd6d404.Darwin.appleclang": "LeaksToken.sol/LeaksToken.json"
+        "GrantVault": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "GrantVault.sol/GrantVault.json"
         }
       }
     },
     "test/BlockLeaks.t.sol": {
-      "lastModificationDate": 1685548605577,
-      "contentHash": "a7c36a24310d6ab80063f653fa04a143",
+      "lastModificationDate": 1686155535923,
+      "contentHash": "c3771e93b2e05204706256648c112474",
       "sourceName": "test/BlockLeaks.t.sol",
       "solcConfig": {
         "settings": {
@@ -1888,56 +1666,17 @@
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/forge-std/lib/ds-test/src/test.sol",
-        "lib/forge-std/src/Base.sol",
-        "lib/forge-std/src/StdAssertions.sol",
-        "lib/forge-std/src/StdChains.sol",
-        "lib/forge-std/src/StdCheats.sol",
-        "lib/forge-std/src/StdError.sol",
-        "lib/forge-std/src/StdInvariant.sol",
-        "lib/forge-std/src/StdJson.sol",
-        "lib/forge-std/src/StdMath.sol",
-        "lib/forge-std/src/StdStorage.sol",
-        "lib/forge-std/src/StdStyle.sol",
-        "lib/forge-std/src/StdUtils.sol",
-        "lib/forge-std/src/Test.sol",
-        "lib/forge-std/src/Vm.sol",
-        "lib/forge-std/src/console.sol",
-        "lib/forge-std/src/console2.sol",
-        "lib/forge-std/src/interfaces/IMulticall3.sol",
-        "lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol",
-        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
-        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
-        "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
-        "lib/openzeppelin-contracts/contracts/utils/Address.sol",
-        "lib/openzeppelin-contracts/contracts/utils/structs/EnumerableSet.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/interfaces/ISismoConnectVerifier.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/sismo-connect/SismoConnectLib.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/AuthRequestBuilder.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/ClaimRequestBuilder.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/RequestBuilder.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/SignatureBuilder.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/SismoConnectHelper.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/Structs.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/periphery/interfaces/IAddressesProvider.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/verifiers/IHydraS2Verifier.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/src/SismoLib.sol",
-        "src/BlockLeaks.sol"
-      ],
-      "versionRequirement": "^0.8.13",
+      "imports": [],
+      "versionRequirement": null,
       "artifacts": {
-        "BlockLeaksTest": {
-          "0.8.19+commit.7dd6d404.Darwin.appleclang": "BlockLeaks.t.sol/BlockLeaksTest.json"
-        },
-        "IBlockLeaks": {
-          "0.8.19+commit.7dd6d404.Darwin.appleclang": "BlockLeaks.t.sol/IBlockLeaks.json"
+        "BlockLeaks.t": {
+          "0.8.19+commit.7dd6d404.Darwin.appleclang": "BlockLeaks.t.sol/BlockLeaks.t.json"
         }
       }
     },
     "test/MainContract/TestLeak.sol": {
-      "lastModificationDate": 1684685078569,
-      "contentHash": "d13227be57fbd69fed25c1c2d172c232",
+      "lastModificationDate": 1686155528876,
+      "contentHash": "fad82910e4e746c3c4558d5d6cbb8e20",
       "sourceName": "test/MainContract/TestLeak.sol",
       "solcConfig": {
         "settings": {
@@ -1967,45 +1706,8 @@
           "libraries": {}
         }
       },
-      "imports": [
-        "lib/forge-std/lib/ds-test/src/test.sol",
-        "lib/forge-std/src/Base.sol",
-        "lib/forge-std/src/StdAssertions.sol",
-        "lib/forge-std/src/StdChains.sol",
-        "lib/forge-std/src/StdCheats.sol",
-        "lib/forge-std/src/StdError.sol",
-        "lib/forge-std/src/StdInvariant.sol",
-        "lib/forge-std/src/StdJson.sol",
-        "lib/forge-std/src/StdMath.sol",
-        "lib/forge-std/src/StdStorage.sol",
-        "lib/forge-std/src/StdStyle.sol",
-        "lib/forge-std/src/StdUtils.sol",
-        "lib/forge-std/src/Test.sol",
-        "lib/forge-std/src/Vm.sol",
-        "lib/forge-std/src/console.sol",
-        "lib/forge-std/src/console2.sol",
-        "lib/forge-std/src/interfaces/IMulticall3.sol",
-        "lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol",
-        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
-        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
-        "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
-        "lib/openzeppelin-contracts/contracts/utils/Address.sol",
-        "lib/openzeppelin-contracts/contracts/utils/structs/EnumerableSet.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/interfaces/ISismoConnectVerifier.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/sismo-connect/SismoConnectLib.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/AuthRequestBuilder.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/ClaimRequestBuilder.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/RequestBuilder.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/SignatureBuilder.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/SismoConnectHelper.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/libs/utils/Structs.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/periphery/interfaces/IAddressesProvider.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/lib/sismo-connect-onchain-verifier/src/verifiers/IHydraS2Verifier.sol",
-        "lib/sismo-connect-packages/packages/sismo-connect-solidity/src/SismoLib.sol",
-        "src/BlockLeaks.sol",
-        "test/BlockLeaks.t.sol"
-      ],
-      "versionRequirement": "^0.8.13",
+      "imports": [],
+      "versionRequirement": null,
       "artifacts": {
         "TestLeak": {
           "0.8.19+commit.7dd6d404.Darwin.appleclang": "TestLeak.sol/TestLeak.json"
